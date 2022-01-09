@@ -21,8 +21,7 @@ void printSolution(int board[N][N])
 
 bool solveNQUtil(int board[N][N], int col)
 {
-	/* base case: If all queens are placed
-	then return true */
+
 	if (col >= N)
 		return true;
 
@@ -33,8 +32,7 @@ bool solveNQUtil(int board[N][N], int col)
 				rd[i + col] != 1) && cl[i] != 1) {
 	
 			board[i][col] = 1;
-			ld[i - col + N - 1] =
-						rd[i + col] = cl[i] = 1;
+			ld[i - col + N - 1] =rd[i + col] = cl[i] = 1;
 
 
 			if (solveNQUtil(board, col + 1))
@@ -67,7 +65,7 @@ bool solveNQ()
 	return true;
 }
 
-// driver program to test above function
+
 int main()
 {
 	solveNQ();
